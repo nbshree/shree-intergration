@@ -1,4 +1,4 @@
-package com.shree.intergration.controller;
+package com.shree.intergration.controller.user;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -7,7 +7,6 @@ import com.shree.intergration.model.service.IdpSsoUserInfoService;
 import com.shree.intergration.vo.result.RestResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,8 +23,8 @@ import java.util.List;
  */
 @CrossOrigin
 @RestController
-@RequestMapping("/api/userInfo/")
-public class IdpSsoUserInfoController {
+@RequestMapping("/api/user/")
+public class UserController {
     @Resource
     IdpSsoUserInfoService idpSsoUserInfoService;
 
