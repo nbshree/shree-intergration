@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shree.intergration.model.mapper.IdpSsoRoleInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.shree.intergration.model.entity.IdpSsoRoleInfo">
+        <id column="ID" property="id" />
+        <result column="STATUS" property="status" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="CREATOR_ID" property="creatorId" />
+        <result column="CREATOR_NAME" property="creatorName" />
+        <result column="MODIFY_TIME" property="modifyTime" />
+        <result column="MODIFIER_ID" property="modifierId" />
+        <result column="MODIFIER_NAME" property="modifierName" />
+        <result column="PARENT_ID" property="parentId" />
+        <result column="ROLE_NAME" property="roleName" />
+        <result column="ROLE_CODE" property="roleCode" />
+        <result column="ROLE_TYPE" property="roleType" />
+        <result column="ROLE_FLAG" property="roleFlag" />
+        <result column="ROLE_PUBLIC" property="rolePublic" />
+        <result column="ROLE_REMARK" property="roleRemark" />
+        <result column="ROLE_SORT" property="roleSort" />
+        <result column="ORG_ID" property="orgId" />
+        <result column="ORG_NAME" property="orgName" />
+        <result column="ORG_CODE" property="orgCode" />
+        <result column="APP_KEY" property="appKey" />
+        <result column="APP_NAME" property="appName" />
+    </resultMap>
+
+</mapper>
