@@ -29,7 +29,7 @@ public class IdpSsoUserInfoController {
     @Resource
     IdpSsoUserInfoService idpSsoUserInfoService;
 
-    @RequestMapping(value = "/getUserInfo", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "/getUserInfoList", method = {RequestMethod.GET, RequestMethod.POST})
     public RestResult<List<IdpSsoUserInfo>> doGetUserInfo() {
         RestResult<List<IdpSsoUserInfo>> result = RestResult.createFailedResult("查询失败！");
         try {
