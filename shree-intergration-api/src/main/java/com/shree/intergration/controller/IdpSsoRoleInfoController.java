@@ -1,4 +1,4 @@
-package com.shree.intergration.model.controller;
+package com.shree.intergration.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -17,23 +17,12 @@ import java.util.List;
  * 统一平台角色结构信息 前端控制器
  * </p>
  *
- * @author riusky
+ * @author shree
  * @since 2020-05-15
  */
 @RestController
 @RequestMapping("/idp-sso-role-info")
 public class IdpSsoRoleInfoController {
-    @Resource
-    IdpSsoUserInfoService idpSsoUserInfoService;
-    @RequestMapping(value = "/test", method = {RequestMethod.GET, RequestMethod.POST})
-    public List<IdpSsoUserInfo> doOnStorageStatistics() {
-        QueryWrapper<IdpSsoUserInfo> queryWrapper = new QueryWrapper<>();
-//        queryWrapper.isNotNull("ID");
-        List<IdpSsoUserInfo> result = this.idpSsoUserInfoService.list(queryWrapper);
-        return result;
-    }
-
-
 
 }
 

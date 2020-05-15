@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
  * 统一平台用户角色映射信息
  * </p>
  *
- * @author riusky
+ * @author shree
  * @since 2020-05-15
  */
 @Data

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * 统一平台角色结构信息 服务实现类
  * </p>
  *
- * @author riusky
+ * @author shree
  * @since 2020-05-15
  */
 @Service

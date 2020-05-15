@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * 统一平台角色结构信息 服务类
  * </p>
  *
- * @author riusky
+ * @author shree
  * @since 2020-05-15
  */
 public interface IdpSsoRoleInfoService extends IService<IdpSsoRoleInfo> {

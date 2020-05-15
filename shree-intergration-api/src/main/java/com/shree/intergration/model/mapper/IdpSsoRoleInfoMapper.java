@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 统一平台角色结构信息 Mapper 接口
  * </p>
  *
- * @author riusky
+ * @author shree
  * @since 2020-05-15
  */
 public interface IdpSsoRoleInfoMapper extends BaseMapper<IdpSsoRoleInfo> {
