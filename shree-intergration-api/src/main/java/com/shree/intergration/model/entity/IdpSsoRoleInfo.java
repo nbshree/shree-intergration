@@ -1,124 +1,151 @@
 package com.shree.intergration.model.entity;
 
-import java.util.Date;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
  * 统一平台角色结构信息
  * </p>
  *
- * @author sry123
+ * @author riusky
  * @since 2020-05-15
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 @TableName("idp_sso_role_info")
 public class IdpSsoRoleInfo implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID=1L;
 
     /**
      * ID@(SnowflakeId)
      */
-    @TableId("ID")
+    @TableId(value = "ID", type = IdType.ID_WORKER)
     private Long id;
+
     /**
      * 记录状态@(0:删除,1:正常)
      */
     @TableField("STATUS")
     private String status;
+
     /**
      * 创建时间
      */
     @TableField("CREATE_TIME")
-    private Date createTime;
+    private LocalDateTime createTime;
+
     /**
      * 创建者ID
      */
     @TableField("CREATOR_ID")
     private Long creatorId;
+
     /**
      * 创建者名称@(用户名)
      */
     @TableField("CREATOR_NAME")
     private String creatorName;
+
     /**
      * 修改时间
      */
     @TableField("MODIFY_TIME")
-    private Date modifyTime;
+    private LocalDateTime modifyTime;
+
     /**
      * 修改者ID
      */
     @TableField("MODIFIER_ID")
     private Long modifierId;
+
     /**
      * 修改者名称@(用户名)
      */
     @TableField("MODIFIER_NAME")
     private String modifierName;
+
     /**
      * 父级角色ID
      */
     @TableField("PARENT_ID")
     private String parentId;
+
     /**
      * 角色名称（中文）
      */
     @TableField("ROLE_NAME")
     private String roleName;
+
     /**
      * 角色代码
      */
     @TableField("ROLE_CODE")
     private String roleCode;
+
     /**
      * 角色类型@(0:企业默认角色,1:自定义角色)
      */
     @TableField("ROLE_TYPE")
     private String roleType;
+
     /**
      * 角色标志@(0:菜单角色,1:数据角色)
      */
     @TableField("ROLE_FLAG")
     private String roleFlag;
+
     /**
      * 是否公开@(0:否,1:是)
      */
     @TableField("ROLE_PUBLIC")
     private String rolePublic;
+
     /**
      * 备注
      */
     @TableField("ROLE_REMARK")
     private String roleRemark;
+
     /**
      * 排序
      */
     @TableField("ROLE_SORT")
     private String roleSort;
+
     /**
      * 所属组织ID
      */
     @TableField("ORG_ID")
     private String orgId;
+
     /**
      * 所属组织名称
      */
     @TableField("ORG_NAME")
     private String orgName;
+
     /**
      * 所属组织名称代码
      */
     @TableField("ORG_CODE")
     private String orgCode;
+
     /**
      * 角色所属的APP KEY
      */
     @TableField("APP_KEY")
     private String appKey;
+
     /**
      * 角色所属的APP NAME
      */
@@ -126,198 +153,46 @@ public class IdpSsoRoleInfo implements Serializable {
     private String appName;
 
 
-    public Long getId() {
-        return id;
-    }
+    public static final String ID = "ID";
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public static final String STATUS = "STATUS";
 
-    public String getStatus() {
-        return status;
-    }
+    public static final String CREATE_TIME = "CREATE_TIME";
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    public static final String CREATOR_ID = "CREATOR_ID";
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+    public static final String CREATOR_NAME = "CREATOR_NAME";
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+    public static final String MODIFY_TIME = "MODIFY_TIME";
 
-    public Long getCreatorId() {
-        return creatorId;
-    }
+    public static final String MODIFIER_ID = "MODIFIER_ID";
 
-    public void setCreatorId(Long creatorId) {
-        this.creatorId = creatorId;
-    }
+    public static final String MODIFIER_NAME = "MODIFIER_NAME";
 
-    public String getCreatorName() {
-        return creatorName;
-    }
+    public static final String PARENT_ID = "PARENT_ID";
 
-    public void setCreatorName(String creatorName) {
-        this.creatorName = creatorName;
-    }
+    public static final String ROLE_NAME = "ROLE_NAME";
 
-    public Date getModifyTime() {
-        return modifyTime;
-    }
+    public static final String ROLE_CODE = "ROLE_CODE";
 
-    public void setModifyTime(Date modifyTime) {
-        this.modifyTime = modifyTime;
-    }
+    public static final String ROLE_TYPE = "ROLE_TYPE";
 
-    public Long getModifierId() {
-        return modifierId;
-    }
+    public static final String ROLE_FLAG = "ROLE_FLAG";
 
-    public void setModifierId(Long modifierId) {
-        this.modifierId = modifierId;
-    }
+    public static final String ROLE_PUBLIC = "ROLE_PUBLIC";
 
-    public String getModifierName() {
-        return modifierName;
-    }
+    public static final String ROLE_REMARK = "ROLE_REMARK";
 
-    public void setModifierName(String modifierName) {
-        this.modifierName = modifierName;
-    }
+    public static final String ROLE_SORT = "ROLE_SORT";
 
-    public String getParentId() {
-        return parentId;
-    }
+    public static final String ORG_ID = "ORG_ID";
 
-    public void setParentId(String parentId) {
-        this.parentId = parentId;
-    }
+    public static final String ORG_NAME = "ORG_NAME";
 
-    public String getRoleName() {
-        return roleName;
-    }
+    public static final String ORG_CODE = "ORG_CODE";
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
+    public static final String APP_KEY = "APP_KEY";
 
-    public String getRoleCode() {
-        return roleCode;
-    }
+    public static final String APP_NAME = "APP_NAME";
 
-    public void setRoleCode(String roleCode) {
-        this.roleCode = roleCode;
-    }
-
-    public String getRoleType() {
-        return roleType;
-    }
-
-    public void setRoleType(String roleType) {
-        this.roleType = roleType;
-    }
-
-    public String getRoleFlag() {
-        return roleFlag;
-    }
-
-    public void setRoleFlag(String roleFlag) {
-        this.roleFlag = roleFlag;
-    }
-
-    public String getRolePublic() {
-        return rolePublic;
-    }
-
-    public void setRolePublic(String rolePublic) {
-        this.rolePublic = rolePublic;
-    }
-
-    public String getRoleRemark() {
-        return roleRemark;
-    }
-
-    public void setRoleRemark(String roleRemark) {
-        this.roleRemark = roleRemark;
-    }
-
-    public String getRoleSort() {
-        return roleSort;
-    }
-
-    public void setRoleSort(String roleSort) {
-        this.roleSort = roleSort;
-    }
-
-    public String getOrgId() {
-        return orgId;
-    }
-
-    public void setOrgId(String orgId) {
-        this.orgId = orgId;
-    }
-
-    public String getOrgName() {
-        return orgName;
-    }
-
-    public void setOrgName(String orgName) {
-        this.orgName = orgName;
-    }
-
-    public String getOrgCode() {
-        return orgCode;
-    }
-
-    public void setOrgCode(String orgCode) {
-        this.orgCode = orgCode;
-    }
-
-    public String getAppKey() {
-        return appKey;
-    }
-
-    public void setAppKey(String appKey) {
-        this.appKey = appKey;
-    }
-
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
-
-    @Override
-    public String toString() {
-        return "IdpSsoRoleInfo{" +
-        "id=" + id +
-        ", status=" + status +
-        ", createTime=" + createTime +
-        ", creatorId=" + creatorId +
-        ", creatorName=" + creatorName +
-        ", modifyTime=" + modifyTime +
-        ", modifierId=" + modifierId +
-        ", modifierName=" + modifierName +
-        ", parentId=" + parentId +
-        ", roleName=" + roleName +
-        ", roleCode=" + roleCode +
-        ", roleType=" + roleType +
-        ", roleFlag=" + roleFlag +
-        ", rolePublic=" + rolePublic +
-        ", roleRemark=" + roleRemark +
-        ", roleSort=" + roleSort +
-        ", orgId=" + orgId +
-        ", orgName=" + orgName +
-        ", orgCode=" + orgCode +
-        ", appKey=" + appKey +
-        ", appName=" + appName +
-        "}";
-    }
 }

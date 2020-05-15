@@ -1,18 +1,15 @@
 package com.shree.intergration.model.controller;
 
 
-import com.baomidou.mybatisplus.mapper.Wrapper;
-import com.shree.intergration.model.entity.IdpSsoRoleInfo;
-import com.shree.intergration.model.service.IdpSsoRoleInfoService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.shree.intergration.model.entity.IdpSsoUserInfo;
+import com.shree.intergration.model.service.IdpSsoUserInfoService;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -20,27 +17,23 @@ import java.util.List;
  * 统一平台角色结构信息 前端控制器
  * </p>
  *
- * @author sry123
+ * @author riusky
  * @since 2020-05-15
  */
 @RestController
-@RequestMapping("/idpSsoRoleInfo")
+@RequestMapping("/idp-sso-role-info")
 public class IdpSsoRoleInfoController {
-
     @Resource
-    IdpSsoRoleInfoService idpSsoRoleInfoService;
-
-    @RequestMapping(value = "monitor/list/mode/map", method = {RequestMethod.GET, RequestMethod.POST})
-    public String doMonitorMapListQuery() {
-        try {
-            QueryWrapper<IdpSsoRoleInfo> queryWrapper =
-            queryWrapper.eq(new IdpSsoRoleInfo(), ProjectConst.RecordStatus.Active);
-            if (null != lastUpdateTime) {
-                queryWrapper.ge(EsealMonitor.Columns.modifyTime, lastUpdateTime);
-            }
-            List<IdpSsoRoleInfo> list = this.idpSsoRoleInfoService.selectList();
-        }
-        return "!2";
+    IdpSsoUserInfoService idpSsoUserInfoService;
+    @RequestMapping(value = "/test", method = {RequestMethod.GET, RequestMethod.POST})
+    public List<IdpSsoUserInfo> doOnStorageStatistics() {
+        QueryWrapper<IdpSsoUserInfo> queryWrapper = new QueryWrapper<>();
+//        queryWrapper.isNotNull("ID");
+        List<IdpSsoUserInfo> result = this.idpSsoUserInfoService.list(queryWrapper);
+        return result;
     }
+
+
+
 }
 
