@@ -2,22 +2,4 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shree.intergration.model.mapper.IdpSsoUserRoleMapMapper">
 
-    <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.shree.intergration.model.entity.IdpSsoUserRoleMap">
-        <id column="ID" property="id" />
-        <result column="STATUS" property="status" />
-        <result column="CREATE_TIME" property="createTime" />
-        <result column="CREATOR_ID" property="creatorId" />
-        <result column="CREATOR_NAME" property="creatorName" />
-        <result column="MODIFY_TIME" property="modifyTime" />
-        <result column="MODIFIER_ID" property="modifierId" />
-        <result column="MODIFIER_NAME" property="modifierName" />
-        <result column="USER_ID" property="userId" />
-        <result column="USER_NAME" property="userName" />
-        <result column="ROLE_ID" property="roleId" />
-        <result column="ROLE_FLAG" property="roleFlag" />
-        <result column="ROLE_OWNER_ID" property="roleOwnerId" />
-        <result column="ROLE_OWNER_TYPE" property="roleOwnerType" />
-    </resultMap>
-
 </mapper>

@@ -38,13 +38,13 @@
 
         <dependency>
             <groupId>com.baomidou</groupId>
-            <artifactId>mybatisplus-spring-boot-starter</artifactId>
-            <version>1.0.5</version>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.1.2</version>
         </dependency>
-        　　　　　<!-- 内部集成mybatis和mybatis-spring, 不需要在引入, 避免版本冲突 -->　
+
         <dependency>
             <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus</artifactId>
+            <artifactId>mybatis-plus-generator</artifactId>
             <version>3.1.2</version>
         </dependency>
 

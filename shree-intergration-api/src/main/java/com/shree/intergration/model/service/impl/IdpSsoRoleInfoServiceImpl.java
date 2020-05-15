@@ -3,7 +3,7 @@ package com.shree.intergration.model.service.impl;
 import com.shree.intergration.model.entity.IdpSsoRoleInfo;
 import com.shree.intergration.model.mapper.IdpSsoRoleInfoMapper;
 import com.shree.intergration.model.service.IdpSsoRoleInfoService;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * 统一平台角色结构信息 服务实现类
  * </p>
  *
- * @author sry123
+ * @author riusky
  * @since 2020-05-15
  */
 @Service
