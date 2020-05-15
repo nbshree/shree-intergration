@@ -27,7 +27,9 @@ public class MybatisPlusCodeGender {
         /*************************************************************
          下面的路径十分关键，只向src/java目录就可以了
          ***************************************************************/
-        gc.setOutputDir("D://");//输出文件路径
+//        gc.setOutputDir("D://");//输出文件路径
+        String projectPath = System.getProperty("user.dir");
+        gc.setOutputDir(projectPath + "/shree-intergration-api/src/main/java");
         gc.setOpen(false);
         gc.setFileOverride(true);
         gc.setActiveRecord(false);// 不需要ActiveRecord特性的请改为false
