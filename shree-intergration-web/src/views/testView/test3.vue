@@ -1,25 +1,20 @@
 <template>
     <div>
         {{title}}
-        <a-rate v-model="test1Value" />
+        <a-rate v-model="test1Value"/>
     </div>
 </template>
 <script>
 
     export default {
-        components: {
-
-        },
+        components: {},
         data() {
             return {
-                title : "test3",
-                test1Value:3
+                title: "test3",
+                test1Value: 3
             };
         },
-        computed: {
-        },
-        methods: {
-
-        },
+        computed: {},
+        methods: {},
     };
 </script>

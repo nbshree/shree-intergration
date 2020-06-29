@@ -40,14 +40,19 @@ export const constantRouterMap = [
         hidden: true
     },
     {
+        path: '/iconTest',
+        component: () => import('@/views/testView/iconTest'),
+        hidden: true
+    },
+    {
         path: '/test1',
         component: () => import('@/views/testView/test1'),
         hidden: true,
-        children:[
+        children: [
             {
-                path:"",
+                path: "",
                 // component:() => import('@/views/testView/test2')
-                components:{
+                components: {
                     test1: () => import('@/views/testView/test2'),
                     default: () => import('@/views/testView/test1'), //默认省略不写name的情况
                 }

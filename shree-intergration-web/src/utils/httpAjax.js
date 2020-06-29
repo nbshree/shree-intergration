@@ -10,7 +10,7 @@ const httpAjax = axios.create({
     },
     timeout: 30000,
     transformRequest: [function (data) {
-        let req = qs.stringify(data, { arrayFormat: 'repeat' });
+        let req = qs.stringify(data, {arrayFormat: 'repeat'});
         return req;
     }]
 });

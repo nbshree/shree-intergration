@@ -1,33 +1,33 @@
 server:
-    port: 3562
+  port: 3562
 
 spring:
-    application:
-        name: shree-intergration-api-service
-    datasource:
-        type: com.zaxxer.hikari.HikariDataSource
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://rm-wz92o8n73a1825z5gjo.mysql.rds.aliyuncs.com/shree_mysql?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-        username: shree
-        password: shry7062955
-        hikari:
-            minimum-idle: 5
-            idle-timeout: 180000
-            maximum-pool-size: 10
-            auto-commit: true
-            pool-name: WotHikariCP
-            max-lifetime: 1800000
-            connection-timeout: 30000
-            connection-test-query: SELECT 1
-    mvc:
-        view:
-            prefix: /templates/
-            suffix: .html
+  application:
+    name: shree-intergration-api-service
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-wz92o8n73a1825z5gjo.mysql.rds.aliyuncs.com/shree_mysql?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: shree
+    password: shry7062955
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 180000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: WotHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
 
 mybatis-plus:
-    mapper-locations: classpath*:/com/shree/intergration/model/mapper/**Mapper.xml
-    #实体扫描，多个package用逗号或者分号分隔
-    typeAliasesPackage: com.shree.intergration.model.entity
-    configuration:
-        map-underscore-to-camel-case: true
-        cache-enabled: false
+  mapper-locations: classpath*:/com/shree/intergration/model/mapper/**Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.shree.intergration.model.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false

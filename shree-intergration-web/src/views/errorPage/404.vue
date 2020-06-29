@@ -10,36 +10,40 @@
 </template>
 
 <script>
-export default {
-    name: 'page404',
-    methods: {
-        returnPrevPage() {
-            this.$router.push({
-                path: '/'
-            });
+    export default {
+        name: 'page404',
+        methods: {
+            returnPrevPage() {
+                this.$router.push({
+                    path: '/'
+                });
+            }
         }
-    }
-};
+    };
 </script>
 
 <style lang="stylus" scoped>
-.notfound-wrap
-    width: 100%
-    height: 100%
-    display: flex
-    align-items: center
-    justify-content: center
-    transform: translateY(-80px)
-    .content
-        text-align: right
-        .title
-            -webkit-font-smoothing: antialiased
-            color: #73b99a
-            font-size: 100px
-            span
-                font-size: 240px
-        .sub
-            font-size: 30px
-            color: #ccc
-            padding-bottom: 50px
+    .notfound-wrap
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        transform: translateY(-80px)
+
+        .content
+            text-align: right
+
+            .title
+                -webkit-font-smoothing: antialiased
+                color: #73b99a
+                font-size: 100px
+
+                span
+                    font-size: 240px
+
+            .sub
+                font-size: 30px
+                color: #ccc
+                padding-bottom: 50px
 </style>

@@ -24,12 +24,14 @@
                 <a-button @click="onFilter">筛选</a-button>
             </a-col>
         </a-row>
-        <a-table size="middle" :pagination="pagination" :row-selection="rowSelection" :columns="columns" :data-source="dataSource" :rowKey="data => data.id" @change="onTableChange">
+        <a-table size="middle" :pagination="pagination" :row-selection="rowSelection" :columns="columns"
+                 :data-source="dataSource" :rowKey="data => data.id" @change="onTableChange">
             <template slot="bizData" slot-scope="text, record">
                 {{record.bizDeptName}}: {{record.bizManagerName}}
             </template>
             <template slot="action" slot-scope="text, record">
-                [<a href="javascript:;" @click="onView(record.id)">查看</a>|<a href="javascript:;" @click="onPop(record.projectName)">任务</a>]
+                [<a href="javascript:;" @click="onView(record.id)">查看</a>|<a href="javascript:;"
+                                                                             @click="onPop(record.projectName)">任务</a>]
             </template>
             <!--            <template>-->
             <!--                <a-pagination show-size-changer :default-current="0" :total="500"></a-pagination>-->
@@ -105,7 +107,7 @@
                 pagination: {
                     showTotal: total => `共 ${total} 条数据`,
                     showSizeChanger: true,
-                    pageSizeOptions:['10','15','20'],
+                    pageSizeOptions: ['10', '15', '20'],
                     orderField: 'projectNo',
                     orderSort: 'DESC',
                 },

@@ -22,7 +22,8 @@
                     <a-col :span="2" style="text-align: center"></a-col>
                     <a-col :span="11">
                         <a-select v-model="project.bizManagerName" placeholder="请选择成员">
-                            <a-select-option v-for="item in orgTypesCache.getItems()" :key="item.dictCode" :value="item.dictName">
+                            <a-select-option v-for="item in orgTypesCache.getItems()" :key="item.dictCode"
+                                             :value="item.dictName">
                                 {{ item.dictName }}
                             </a-select-option>
                         </a-select>
@@ -41,7 +42,8 @@
                     <a-col :span="2" style="text-align: center"></a-col>
                     <a-col :span="11">
                         <a-select v-model="project.techManagerName" placeholder="请选择成员">
-                            <a-select-option v-for="item in orgTypesCache.getItems()" :key="item.dictCode" :value="item.dictName">
+                            <a-select-option v-for="item in orgTypesCache.getItems()" :key="item.dictCode"
+                                             :value="item.dictName">
                                 {{ item.dictName }}
                             </a-select-option>
                         </a-select>
@@ -51,11 +53,15 @@
             <a-form-model-item label="计划时间">
                 <a-row>
                     <a-col :span="11">
-                        <a-date-picker style="width: 100%" v-model="project.planStartTime" show-Time :disabled-date="onDisabledStartDate" format="YYYY-MM-DD" placeholder="开始时间" @openChange="onPlanTimeStartChange"/>
+                        <a-date-picker style="width: 100%" v-model="project.planStartTime" show-Time
+                                       :disabled-date="onDisabledStartDate" format="YYYY-MM-DD" placeholder="开始时间"
+                                       @openChange="onPlanTimeStartChange"/>
                     </a-col>
                     <a-col :span="2" style="text-align: center">~</a-col>
                     <a-col :span="11">
-                        <a-date-picker style="width: 100%" v-model="project.planEndTime" show-Time :disabled-date="onDisabledEndDate" format="YYYY-MM-DD" placeholder="结束时间" :open="isPlanTimeOpen"
+                        <a-date-picker style="width: 100%" v-model="project.planEndTime" show-Time
+                                       :disabled-date="onDisabledEndDate" format="YYYY-MM-DD" placeholder="结束时间"
+                                       :open="isPlanTimeOpen"
                                        @openChange="onPlanTimeEndChange"/>
                     </a-col>
                 </a-row>

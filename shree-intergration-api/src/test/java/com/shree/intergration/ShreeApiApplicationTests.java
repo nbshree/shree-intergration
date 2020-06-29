@@ -8,7 +8,7 @@ class ShreeApiApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println("结果:"+System.getProperty("user.dir")+"/src/main/java");
+        System.out.println("结果:" + System.getProperty("user.dir") + "/src/main/java");
 
     }
 

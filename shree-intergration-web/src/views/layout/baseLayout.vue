@@ -63,6 +63,7 @@
                     <a-menu-item key="404">404</a-menu-item>
                     <a-menu-item key="projectList">projectList</a-menu-item>
                     <a-menu-item key="test1">test1</a-menu-item>
+                    <a-menu-item key="iconTest">iconTest</a-menu-item>
                 </a-sub-menu>
 
             </a-menu>
@@ -103,7 +104,7 @@
             },
             handleClick(e) {
                 this.current = e.key;
-                this.$router.push({path:e.key})
+                this.$router.push({path: e.key})
             },
         },
     };
