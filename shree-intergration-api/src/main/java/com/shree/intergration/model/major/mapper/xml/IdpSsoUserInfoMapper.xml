@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shree.intergration.model.major.mapper.IdpSsoUserInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.shree.intergration.model.major.entity.IdpSsoUserInfo">
+        <id column="ID" property="id" />
+        <result column="STATUS" property="status" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="CREATOR_ID" property="creatorId" />
+        <result column="CREATOR_NAME" property="creatorName" />
+        <result column="MODIFY_TIME" property="modifyTime" />
+        <result column="MODIFIER_ID" property="modifierId" />
+        <result column="MODIFIER_NAME" property="modifierName" />
+        <result column="ACTIVE_STATUS" property="activeStatus" />
+        <result column="APPROVE_STATUS" property="approveStatus" />
+        <result column="APPROVE_TIME" property="approveTime" />
+        <result column="APPROVER_ID" property="approverId" />
+        <result column="APPROVER_NAME" property="approverName" />
+        <result column="USER_NAME" property="userName" />
+        <result column="USER_NICK_NAME" property="userNickName" />
+        <result column="USER_REAL_NAME" property="userRealName" />
+        <result column="USER_PWD" property="userPwd" />
+        <result column="USER_TYPE" property="userType" />
+        <result column="GENDER" property="gender" />
+        <result column="MAIL" property="mail" />
+        <result column="TEL" property="tel" />
+        <result column="MOBILE" property="mobile" />
+        <result column="CERT_TYPE" property="certType" />
+        <result column="CERT_NO" property="certNo" />
+        <result column="ORG_ID" property="orgId" />
+        <result column="ORG_CODE" property="orgCode" />
+        <result column="ORG_NAME" property="orgName" />
+        <result column="DEPT_ID" property="deptId" />
+        <result column="DEPT_NAME" property="deptName" />
+        <result column="CIQ_CODE" property="ciqCode" />
+        <result column="CUSTOMS_CODE" property="customsCode" />
+        <result column="CNCA_CODE" property="cncaCode" />
+        <result column="DISTRICT_NAME" property="districtName" />
+    </resultMap>
+
+</mapper>

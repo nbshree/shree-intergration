@@ -1,0 +1,27 @@
+global:
+    author: klz
+    outputDir: .\src\main\java
+    fileOverride: true
+    activeRecord: true
+    baseResultMap: true
+
+dataSource:
+    url: jdbc:mysql://rm-wz92o8n73a1825z5gjo.mysql.rds.aliyuncs.com/shree_mysql?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driverName: com.mysql.cj.jdbc.Driver
+    username: shree
+    password: shry7062955
+
+strategy:
+    naming: underline_to_camel
+    entitySerialVersionUID: false
+    entityColumnConstant: true
+    include:
+        - idp_sso_user_role_map
+        - idp_sso_user_info
+
+packageInfo:
+    parent: com.shree.intergration.model.major
+
+template:
+    controller:
+    searchEntity:
