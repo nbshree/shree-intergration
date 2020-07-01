@@ -1,166 +1,171 @@
 package com.shree.intergration.model.major.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 
 /**
  * <p>
- * 统一平台用户角色映射信息
+ * 角色信息表
  * </p>
  *
- * @author klz
- * @since 2020-06-30
+ * @author shree
+ * @since 2020-07-01
  */
-public class IdpSsoUserRoleMap extends Model<IdpSsoUserRoleMap> {
+public class IdpRoleInfo extends Model<IdpRoleInfo> {
 
     /**
     * 所有字段名
     */
     public static class Columns {
         /**
-        * ID@(SnowflakeId)
+        * id@(SnowflakeId)
         */
-        public static final String id = "ID";
+        public static final String id = "id";
         /**
         * 记录状态@(0:删除,1:正常)
         */
-        public static final String status = "STATUS";
+        public static final String status = "status";
         /**
         * 创建时间
         */
-        public static final String createTime = "CREATE_TIME";
+        public static final String createTime = "create_time";
         /**
         * 创建者ID
         */
-        public static final String creatorId = "CREATOR_ID";
+        public static final String creatorId = "creator_id";
         /**
         * 创建者名称@(用户名)
         */
-        public static final String creatorName = "CREATOR_NAME";
+        public static final String creatorName = "creator_name";
         /**
         * 修改时间
         */
-        public static final String modifyTime = "MODIFY_TIME";
+        public static final String modifyTime = "modify_time";
         /**
         * 修改者ID
         */
-        public static final String modifierId = "MODIFIER_ID";
+        public static final String modifierId = "modifier_id";
         /**
         * 修改者名称@(用户名)
         */
-        public static final String modifierName = "MODIFIER_NAME";
+        public static final String modifierName = "modifier_name";
         /**
-        * 用户ID
+        * 所属企业ID@(同时用于数据权限过滤)
         */
-        public static final String userId = "USER_ID";
+        public static final String entId = "ent_id";
         /**
-        * 用户名
+        * 所属企业名称
         */
-        public static final String userName = "USER_NAME";
+        public static final String entName = "ent_name";
         /**
-        * 角色ID
+        * 父级角色ID
         */
-        public static final String roleId = "ROLE_ID";
+        public static final String parentId = "parent_id";
         /**
-        * 角色标志@(0:菜单角色,1:数据角色)
+        * 角色名称
         */
-        public static final String roleFlag = "ROLE_FLAG";
+        public static final String roleName = "role_name";
         /**
-        * 角色所属者ID@(企业ID或用户ID)
+        * 角色代码
         */
-        public static final String roleOwnerId = "ROLE_OWNER_ID";
+        public static final String roleCode = "role_code";
         /**
-        * 角色所属类型@(0:企业,1:用户)
+        * 备注
         */
-        public static final String roleOwnerType = "ROLE_OWNER_TYPE";
+        public static final String remark = "remark";
+        /**
+        * 排序
+        */
+        public static final String sort = "sort";
     }
 
     /**
-     * ID@(SnowflakeId)
+     * id@(SnowflakeId)
      */
-    @TableId("ID")
     private Long id;
 
     /**
      * 记录状态@(0:删除,1:正常)
      */
-    @TableField("STATUS")
     private String status;
 
     /**
      * 创建时间
      */
-    @TableField("CREATE_TIME")
+    @TableField("create_time")
     private LocalDateTime createTime;
 
     /**
      * 创建者ID
      */
-    @TableField("CREATOR_ID")
+    @TableField("creator_id")
     private Long creatorId;
 
     /**
      * 创建者名称@(用户名)
      */
-    @TableField("CREATOR_NAME")
+    @TableField("creator_name")
     private String creatorName;
 
     /**
      * 修改时间
      */
-    @TableField("MODIFY_TIME")
+    @TableField("modify_time")
     private LocalDateTime modifyTime;
 
     /**
      * 修改者ID
      */
-    @TableField("MODIFIER_ID")
+    @TableField("modifier_id")
     private Long modifierId;
 
     /**
      * 修改者名称@(用户名)
      */
-    @TableField("MODIFIER_NAME")
+    @TableField("modifier_name")
     private String modifierName;
 
     /**
-     * 用户ID
+     * 所属企业ID@(同时用于数据权限过滤)
      */
-    @TableField("USER_ID")
-    private Long userId;
+    @TableField("ent_id")
+    private Long entId;
 
     /**
-     * 用户名
+     * 所属企业名称
      */
-    @TableField("USER_NAME")
-    private String userName;
+    @TableField("ent_name")
+    private String entName;
 
     /**
-     * 角色ID
+     * 父级角色ID
      */
-    @TableField("ROLE_ID")
-    private Long roleId;
+    @TableField("parent_id")
+    private Long parentId;
 
     /**
-     * 角色标志@(0:菜单角色,1:数据角色)
+     * 角色名称
      */
-    @TableField("ROLE_FLAG")
-    private String roleFlag;
+    @TableField("role_name")
+    private String roleName;
 
     /**
-     * 角色所属者ID@(企业ID或用户ID)
+     * 角色代码
      */
-    @TableField("ROLE_OWNER_ID")
-    private Long roleOwnerId;
+    @TableField("role_code")
+    private String roleCode;
 
     /**
-     * 角色所属类型@(0:企业,1:用户)
+     * 备注
      */
-    @TableField("ROLE_OWNER_TYPE")
-    private String roleOwnerType;
+    private String remark;
+
+    /**
+     * 排序
+     */
+    private String sort;
 
 
     public Long getId() {
@@ -227,52 +232,60 @@ public class IdpSsoUserRoleMap extends Model<IdpSsoUserRoleMap> {
         this.modifierName = modifierName;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getEntId() {
+        return entId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setEntId(Long entId) {
+        this.entId = entId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getEntName() {
+        return entName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEntName(String entName) {
+        this.entName = entName;
     }
 
-    public Long getRoleId() {
-        return roleId;
+    public Long getParentId() {
+        return parentId;
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 
-    public String getRoleFlag() {
-        return roleFlag;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRoleFlag(String roleFlag) {
-        this.roleFlag = roleFlag;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
-    public Long getRoleOwnerId() {
-        return roleOwnerId;
+    public String getRoleCode() {
+        return roleCode;
     }
 
-    public void setRoleOwnerId(Long roleOwnerId) {
-        this.roleOwnerId = roleOwnerId;
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode;
     }
 
-    public String getRoleOwnerType() {
-        return roleOwnerType;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setRoleOwnerType(String roleOwnerType) {
-        this.roleOwnerType = roleOwnerType;
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 
     @Override
@@ -282,7 +295,7 @@ public class IdpSsoUserRoleMap extends Model<IdpSsoUserRoleMap> {
 
     @Override
     public String toString() {
-        return "IdpSsoUserRoleMap{" +
+        return "IdpRoleInfo{" +
         "id=" + id +
         ", status=" + status +
         ", createTime=" + createTime +
@@ -291,12 +304,13 @@ public class IdpSsoUserRoleMap extends Model<IdpSsoUserRoleMap> {
         ", modifyTime=" + modifyTime +
         ", modifierId=" + modifierId +
         ", modifierName=" + modifierName +
-        ", userId=" + userId +
-        ", userName=" + userName +
-        ", roleId=" + roleId +
-        ", roleFlag=" + roleFlag +
-        ", roleOwnerId=" + roleOwnerId +
-        ", roleOwnerType=" + roleOwnerType +
+        ", entId=" + entId +
+        ", entName=" + entName +
+        ", parentId=" + parentId +
+        ", roleName=" + roleName +
+        ", roleCode=" + roleCode +
+        ", remark=" + remark +
+        ", sort=" + sort +
         "}";
     }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shree.intergration.model.major.mapper.IdpRoleResourceMapMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.shree.intergration.model.major.entity.IdpRoleResourceMap">
+        <id column="id" property="id" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="creator_id" property="creatorId" />
+        <result column="creator_name" property="creatorName" />
+        <result column="modify_time" property="modifyTime" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modifier_name" property="modifierName" />
+        <result column="ent_id" property="entId" />
+        <result column="ent_name" property="entName" />
+        <result column="role_code" property="roleCode" />
+        <result column="resource_code" property="resourceCode" />
+        <result column="resource_permission" property="resourcePermission" />
+    </resultMap>
+
+</mapper>

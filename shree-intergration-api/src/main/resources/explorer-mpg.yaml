@@ -1,5 +1,5 @@
 global:
-    author: klz
+    author: shree
     outputDir: .\src\main\java
     fileOverride: true
     activeRecord: true
@@ -16,12 +16,17 @@ strategy:
     entitySerialVersionUID: false
     entityColumnConstant: true
     include:
-        - idp_sso_user_role_map
-        - idp_sso_user_info
+        - idp_app_resource
+        - idp_dict_info
+        - idp_ent_info
+        - idp_params_info
+        - idp_role_info
+        - idp_role_resource_map
+        - idp_user_info
+        - idp_user_role_map
 
 packageInfo:
     parent: com.shree.intergration.model.major
 
 template:
     controller:
-    searchEntity:
