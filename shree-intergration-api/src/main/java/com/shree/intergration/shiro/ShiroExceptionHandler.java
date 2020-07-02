@@ -30,12 +30,14 @@ public class ShiroExceptionHandler {
      */
     @ExceptionHandler({UnauthenticatedException.class, AuthenticationException.class})
     public String authenticationException(HttpServletRequest request, HttpServletResponse response) {
-        if (isAjaxRequest(request, response)) {
-            writeJson(NOT_LOGGED_IN, response);
-            return null;
-        } else {
-            return "redirect:/login";
-        }
+//        if (isAjaxRequest(request, response)) {
+//            writeJson(NOT_LOGGED_IN, response);
+//            return null;
+//        } else {
+//            return "redirect:/login";
+//        }
+        writeJson(NOT_LOGGED_IN, response);
+        return null;
     }
 
     /**
@@ -43,12 +45,14 @@ public class ShiroExceptionHandler {
      */
     @ExceptionHandler({UnauthorizedException.class, AuthorizationException.class})
     public String authorizationException(HttpServletRequest request, HttpServletResponse response) {
-        if (isAjaxRequest(request, response)) {
-            writeJson(NOT_AUTHORIZED, response);
-            return null;
-        } else {
-            return "redirect:/error/403";
-        }
+//        if (isAjaxRequest(request, response)) {
+//            writeJson(NOT_AUTHORIZED, response);
+//            return null;
+//        } else {
+//            return "redirect:/error/403";
+//        }
+        writeJson(NOT_AUTHORIZED, response);
+        return null;
     }
 
     private void writeJson(String jsonStr, HttpServletResponse response) {

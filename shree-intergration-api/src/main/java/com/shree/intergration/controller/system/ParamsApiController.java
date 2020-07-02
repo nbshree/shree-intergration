@@ -25,8 +25,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 
 @RestController
-@RequestMapping(value = "/api/system/params", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-@RequiresPermissions("system:params")
+@RequestMapping(value = "/system/params", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+//@RequiresPermissions("system:params")
 public class ParamsApiController {
 
     @Resource

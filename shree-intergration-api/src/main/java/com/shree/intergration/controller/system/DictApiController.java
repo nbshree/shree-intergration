@@ -28,8 +28,8 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/system/dict", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-@RequiresPermissions("system:dict")
+@RequestMapping(value = "/system/dict", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+//@RequiresPermissions("system:dict")
 public class DictApiController {
 
     @Resource

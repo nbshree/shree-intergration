@@ -27,7 +27,7 @@ import java.util.concurrent.Executors;
 
 @Log4j2
 @RestController
-@RequestMapping(value = "/api/system/resource", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(value = "/system/resource", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 //@RequiresPermissions("system:menu")
 public class AppResourceApiController {
 

@@ -29,8 +29,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/system/role", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-@RequiresPermissions("system:role")
+@RequestMapping(value = "/system/role", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+//@RequiresPermissions("system:role")
 public class RoleApiController {
 
     @Resource

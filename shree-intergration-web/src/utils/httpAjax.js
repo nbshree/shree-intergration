@@ -2,7 +2,7 @@ import axios from 'axios';
 import qs from 'qs';
 
 const httpAjax = axios.create({
-    baseURL: 'http://localhost:3562/',
+    baseURL: '/api',
     // `withCredentials` 表示跨域请求时是否需要使用凭证
     withCredentials: false,
     headers: {

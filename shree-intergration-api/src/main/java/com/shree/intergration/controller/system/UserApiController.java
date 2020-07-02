@@ -19,8 +19,11 @@ import com.shree.intergration.model.major.entity.IdpUserRoleMapSearch;
 import com.shree.intergration.model.major.service.IdpUserInfoService;
 import com.shree.intergration.model.major.service.IdpUserRoleMapService;
 import com.shree.intergration.util.ConstUtils;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresUser;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,7 +35,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/system/user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@CrossOrigin
+@RequestMapping(value = "/system/user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequiresAuthentication
 //@RequiresPermissions("system:user")
 public class UserApiController {
 

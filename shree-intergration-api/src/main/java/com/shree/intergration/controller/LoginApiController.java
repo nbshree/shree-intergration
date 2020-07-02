@@ -20,12 +20,14 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Api(tags = "公开登录接口")
 @Log4j2
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/api/open", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(value = "/open", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class LoginApiController {
 
     @Resource
@@ -55,5 +57,19 @@ public class LoginApiController {
             log.error("用户登录接口错误！", ex);
             return ApiStatusResult.ERROR;
         }
+    }
+
+    @RequestMapping(value = "/logoff", method = {RequestMethod.GET, RequestMethod.POST})
+    public RestResult doWebUserLoginOff(HttpServletRequest request, HttpServletResponse response) {
+        RestResult restResult = RestResult.createSuccessResult("退出成功！");
+        try {
+            Subject subject = SecurityUtils.getSubject();
+            subject.logout();
+//            String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/";
+//            response.sendRedirect(basePath);
+        } catch (Exception ex) {
+            restResult.setErrorResult("退出失败!", null, ex.getMessage());
+        }
+        return restResult;
     }
 }

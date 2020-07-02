@@ -45,6 +45,11 @@ export const constantRouterMap = [
         hidden: true
     },
     {
+        path: '/ajaxIndex',
+        component: () => import('@/views/testView/ajaxIndex'),
+        hidden: true
+    },
+    {
         path: '/test1',
         component: () => import('@/views/testView/test1'),
         hidden: true,
