@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-// import page403 from '@/views/errorPage/403';
+import Layout from '@/views/layout/index';
 // import _import from '@/utils/import';
 
-// const Layout = _import('layout/index');
+// const Layout = require('@/views/layout/index');
 
 Vue.use(VueRouter);
 
@@ -19,6 +19,29 @@ export const constantRouterMap = [
     //     }
     //   ]
     // },
+    {
+        path: '',
+        component: Layout,
+        redirect: 'ajaxIndex',
+        single: true,
+        children: [
+            {
+                path: 'ajaxIndex',
+                name: 'ajaxIndex',
+                component: () => import('@/views/testView/ajaxIndex'),
+                meta: {
+                    title: '控制面板test',
+                    icon: 'ajaxIndex',
+                    permission: 'ajaxIndex'
+                }
+            }
+        ]
+    },
+    {
+        path: '/login',
+        component: () => import('@/views/login/index'),
+        hidden: true
+    },
     {
         path: '/403',
         component: () => import('@/views/errorPage/403'),
@@ -44,11 +67,11 @@ export const constantRouterMap = [
         component: () => import('@/views/testView/iconTest'),
         hidden: true
     },
-    {
-        path: '/ajaxIndex',
-        component: () => import('@/views/testView/ajaxIndex'),
-        hidden: true
-    },
+    // {
+    //     path: '/ajaxIndex',
+    //     component: () => import('@/views/testView/ajaxIndex'),
+    //     hidden: true
+    // },
     {
         path: '/test1',
         component: () => import('@/views/testView/test1'),
@@ -70,24 +93,6 @@ export const constantRouterMap = [
     //   name: 'lock',
     //   hidden: true
     // },
-    // {
-    //   path: '',
-    //   component: Layout,
-    //   redirect: 'dashboard',
-    //   single: true,
-    //   children: [
-    //     {
-    //       path: 'dashboard',
-    //       name: 'dashboard',
-    //       component: _import('dashboard/index'),
-    //       meta: {
-    //         title: '控制面板',
-    //         icon: 'dashboard',
-    //         permission: 'dashboard'
-    //       }
-    //     }
-    //   ]
-    // }
 ];
 
 const createRouter = () =>

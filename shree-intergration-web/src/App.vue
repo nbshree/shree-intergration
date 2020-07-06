@@ -1,17 +1,18 @@
 <template>
     <div id="app">
-        <base-layout></base-layout>
+<!--        <base-layout></base-layout>-->
+        <router-view />
     </div>
 </template>
 
 <script>
-    import baseLayout from "./views/layout/baseLayout";
+    // import baseLayout from "./views/layout/baseLayout";
 
     export default {
         name: 'App',
-        components: {
-            baseLayout
-        }
+        // components: {
+        //     baseLayout
+        // }
     }
 </script>
 
