@@ -20,9 +20,9 @@ export const constantRouterMap = [
     //   ]
     // },
     {
-        path: '',
+        path: '/',
         component: Layout,
-        redirect: 'ajaxIndex',
+        redirect: '/ajaxIndex',
         single: true,
         children: [
             {
@@ -34,6 +34,27 @@ export const constantRouterMap = [
                     icon: 'ajaxIndex',
                     permission: 'ajaxIndex'
                 }
+            }
+        ]
+    },
+    {
+        path: '/test',
+        component: Layout,
+        children: [
+            {
+                path: 'test1',
+                component: () => import('@/views/testView/test1'),
+                hidden: true,
+                children: [
+                    {
+                        path: "",
+                        // component:() => import('@/views/testView/test2')
+                        components: {
+                            test1: () => import('@/views/testView/test2'),
+                            default: () => import('@/views/testView/test1'), //默认省略不写name的情况
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -72,21 +93,7 @@ export const constantRouterMap = [
     //     component: () => import('@/views/testView/ajaxIndex'),
     //     hidden: true
     // },
-    {
-        path: '/test1',
-        component: () => import('@/views/testView/test1'),
-        hidden: true,
-        children: [
-            {
-                path: "",
-                // component:() => import('@/views/testView/test2')
-                components: {
-                    test1: () => import('@/views/testView/test2'),
-                    default: () => import('@/views/testView/test1'), //默认省略不写name的情况
-                }
-            }
-        ]
-    },
+
     // {
     //   path: '/lock',
     //   component: _import('lock/index'),

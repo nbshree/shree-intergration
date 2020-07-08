@@ -59,11 +59,11 @@
                         <a-icon type="setting"/>
                         <span>测试</span>
                     </span>
-                    <a-menu-item key="403">403</a-menu-item>
-                    <a-menu-item key="404">404</a-menu-item>
-                    <a-menu-item key="projectList">projectList</a-menu-item>
-                    <a-menu-item key="test1">test1</a-menu-item>
-                    <a-menu-item key="iconTest">iconTest</a-menu-item>
+                    <a-menu-item key="/403">403</a-menu-item>
+                    <a-menu-item key="/404">404</a-menu-item>
+                    <a-menu-item key="/projectList">projectList</a-menu-item>
+                    <a-menu-item key="/test/test1">test1</a-menu-item>
+                    <a-menu-item key="/iconTest">iconTest</a-menu-item>
                 </a-sub-menu>
 
             </a-menu>

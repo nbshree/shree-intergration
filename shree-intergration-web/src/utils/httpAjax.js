@@ -1,5 +1,6 @@
 import axios from 'axios';
 import qs from 'qs';
+import localStorage from '@/utils/localStorage';
 
 const httpAjax = axios.create({
     baseURL: '/api',
@@ -15,14 +16,25 @@ const httpAjax = axios.create({
     }]
 });
 
+// request 拦截器
+httpAjax.interceptors.request.use(config => {
+        // config.headers.token = sessionStorage.token;
+        config.data = {
+            ...config.data,
+            JSESSIONID: localStorage.get("JSESSIONID"),
+        }
+        return config;
+    },
+    error => Promise.reject(error)
+);
 
 // respone 拦截器
 httpAjax.interceptors.response.use(
     (response) => {
         const res = response.data;
-        if (res.status !== 1) {
-            return Promise.reject(res);
-        }
+        // if (res.status !== 1) {
+        //     return Promise.reject(res);
+        // }
         return Promise.resolve(res);
     },
     (error) => {

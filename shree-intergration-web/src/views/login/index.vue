@@ -8,7 +8,7 @@
                         <span>Shree</span>
                     </div>
                     <div class="loginForm">
-                        <login-form ref="login-form" @goForgot="wrapSwitch(false)" @login="login"></login-form>
+                        <login-form ref="login-form" @goForgot="wrapSwitch(false)" @login="loginUser"></login-form>
                     </div>
                 </div>
                 <div v-show="!notforget" class="login-card-right">
@@ -27,6 +27,8 @@
     </div>
 </template>
 <script>
+    import {mapState, mapGetters, mapMutations, mapActions} from "vuex";
+
     import httpAjax from "@/utils/httpAjax";
     import LoginForm from "@/components/login/LoginForm";
     import ForgetForm from "@/components/login/ForgetForm";
@@ -63,6 +65,7 @@
             }
         },
         methods: {
+            ...mapActions("user", {"logins": "login"}),
             wrapSwitch(state) {
                 this.switchLeft = !this.switchLeft;
                 this.switchRight = !this.switchRight;
@@ -71,16 +74,16 @@
                     this.$refs['login-form'].resetForm();
                 }, 300);
             },
-            login(data) {
-                httpAjax.get('/open/login', {
-                    params: {
-                        userName: data.user,
-                        userPwd: data.password
+            loginUser(data) {
+                this.logins({username: data.user, password: data.password}).then((response) => {
+                    if (response.status === 1) {
+                        let routerPath = '/';
+                        this.$router.push({path: routerPath});
+                    } else {
+                        this.$message.error('登陆失败！');
                     }
-                }).then((response) => {
-                    console.log(response);
-                }, (reject) => {
-                    console.log(reject)
+                }, (error) => {
+                    throw new Error(error);
                 });
             }
         },
