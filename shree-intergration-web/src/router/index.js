@@ -22,40 +22,41 @@ export const constantRouterMap = [
     {
         path: '/',
         component: Layout,
-        redirect: '/ajaxIndex',
+        redirect: '/dashboard',
         single: true,
         children: [
             {
-                path: 'ajaxIndex',
-                name: 'ajaxIndex',
-                component: () => import('@/views/testView/ajaxIndex'),
+                path: 'dashboard',
+                name: 'dashboard',
+                component: () => import('@/views/dashboard'),
                 meta: {
-                    title: '控制面板test',
-                    icon: 'ajaxIndex',
-                    permission: 'ajaxIndex'
+                    title: '控制面板',
+                    icon: 'dashboard',
+                    permission: 'dashboard'
                 }
             }
         ]
     },
     {
         path: '/test',
+        name: 'test',
+        redirect: '/test/test1',
         component: Layout,
         children: [
             {
-                path: 'test1',
-                component: () => import('@/views/testView/test1'),
-                hidden: true,
-                children: [
-                    {
-                        path: "",
-                        // component:() => import('@/views/testView/test2')
-                        components: {
-                            test1: () => import('@/views/testView/test2'),
-                            default: () => import('@/views/testView/test1'), //默认省略不写name的情况
-                        }
-                    }
-                ]
-            }
+                path: "test1",
+                name: 'test1',
+                // component:() => import('@/views/testView/test2')
+                components: {
+                    test1: () => import('@/views/testView/test2'),
+                    default: () => import('@/views/testView/test1'), //默认省略不写name的情况
+                }
+            },
+            {
+                path: "test2",
+                name: 'test2',
+                components: () => import('@/views/testView/test2')
+            },
         ]
     },
     {

@@ -84,7 +84,6 @@
     import moment from 'moment';
     import 'moment/locale/zh-cn';
     import httpAjax from "@/utils/httpAjax";
-    import dictCache from "@/utils/dictCache";
 
     const bizDeptData = [
         {key: '1', name: '市场部'},
@@ -120,7 +119,7 @@
                 loading: false,
                 labelCol: {span: 4},
                 wrapperCol: {span: 14},
-                orgTypesCache: dictCache.getDict('ORG_TYPE'),
+                orgTypesCache: [],
                 project: projectData,
                 bizDeptItems: bizDeptData,
             };
