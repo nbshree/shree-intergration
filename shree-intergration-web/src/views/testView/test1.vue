@@ -3,8 +3,8 @@
         {{title}}
         {{title}}
         <a-rate v-model="test1Value"/>
-        <router-view name="test1"/>
-        <router-view/>
+<!--        <router-view name="test1"/>-->
+<!--        <router-view/>-->
 
         <Test2 message1="静态值" :message2="title"></Test2>
     </div>

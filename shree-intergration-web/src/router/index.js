@@ -22,6 +22,7 @@ export const constantRouterMap = [
     {
         path: '/',
         component: Layout,
+        name: 'dashboard',
         redirect: '/dashboard',
         single: true,
         children: [
@@ -39,7 +40,8 @@ export const constantRouterMap = [
     },
     {
         path: '/test',
-        name: 'test',
+        name: '工作台',
+        icon: 'desktop',
         redirect: '/test/test1',
         component: Layout,
         children: [
@@ -55,7 +57,7 @@ export const constantRouterMap = [
             {
                 path: "test2",
                 name: 'test2',
-                components: () => import('@/views/testView/test2')
+                component: () => import('@/views/testView/test2')
             },
         ]
     },
@@ -102,6 +104,11 @@ export const constantRouterMap = [
     //   hidden: true
     // },
 ];
+
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+    return originalPush.call(this, location).catch(err => err)
+}
 
 const createRouter = () =>
     new VueRouter({
