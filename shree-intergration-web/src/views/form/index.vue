@@ -1,30 +1,24 @@
 <template>
-    <a-layout id="components-layout-demo-side" style="min-height: 100vh">
-        <a-layout-header class="header">
-            <navbar></navbar>
-        </a-layout-header>
-        <a-layout-content>
-            <leftContent></leftContent>
-        </a-layout-content>
-    </a-layout>
+    <div>
+        <button @click="onClick">11</button>
+        <Form ref="myForm"></Form>
+    </div>
 </template>
 <script>
-    import navbar from "@/components/layout/navbar/index";
-    import leftContent from "@/components/layout/content/leftContent";
+    import Form from "@/components/form/Form";
 
     export default {
         components: {
-            navbar,
-            leftContent
+            Form
         },
-        computed: {
-        },
+        computed: {},
         data() {
-            return {
-            };
+            return {};
         },
         methods: {
-
+            onClick() {
+                this.$refs.myForm.consoleMe("6666666666666");
+            }
         },
     };
 </script>

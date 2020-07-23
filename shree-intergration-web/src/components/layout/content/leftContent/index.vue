@@ -23,7 +23,6 @@
         <a-layout-content style="margin: 0 16px">
             <router-view/>
         </a-layout-content>
-        <button @click="cilck1"></button>
     </a-layout>
 </template>
 
@@ -71,9 +70,6 @@
                 console.log(e.key)
                 this.current = e.key;
                 this.$router.push({path: e.key})
-            },
-            cilck1(){
-                this.defaultOpenKeys = this.$route.matched[0].path;
             }
         }
     };
